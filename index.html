@@ -1120,157 +1120,116 @@ function hidePage(id) {
 </div>
 
 <section class="instagram-section" id="instagram">
-  <div class="instagram-header fade-in">
-    <span class="section-label">Instagram</span>
-    <h2 class="section-title">日々の活動をお届け</h2>
-  </div>
-  <div class="instagram-grid fade-in">
-    <div class="insta-item"><div class="insta-placeholder">🏠</div></div>
-    <div class="insta-item"><div class="insta-placeholder">🌿</div></div>
-    <div class="insta-item"><div class="insta-placeholder">🏡</div></div>
-    <div class="insta-item"><div class="insta-placeholder">📐</div></div>
-    <div class="insta-item"><div class="insta-placeholder">🤝</div></div>
-    <div class="insta-item"><div class="insta-placeholder">✨</div></div>
-  </div>
-  <a href="https://www.instagram.com/irodori_inc/" target="_blank" class="insta-btn fade-in">
-    <span>@irodori_inc</span><span style="font-size:1.1rem">→</span>
-  </a>
-</section>
-
-<section class="contact-section" id="contact">
-  <span class="contact-label">Free Consultation</span>
-  <h2 class="contact-title">まず、話してみませんか。</h2>
-  <p class="contact-sub">家のこと、土地のこと、お金のこと。<br>どんな小さな疑問でも、お気軽にどうぞ。</p>
-  <div class="contact-form">
-    <div class="form-group">
-      <label class="form-label">お名前 *</label>
-      <input type="text" class="form-input" placeholder="山田 太郎">
-    </div>
-    <div class="form-group">
-      <label class="form-label">メールアドレス *</label>
-      <input type="email" class="form-input" placeholder="example@email.com">
-    </div>
-    <div class="form-group">
-      <label class="form-label">電話番号</label>
-      <input type="tel" class="form-input" placeholder="090-0000-0000">
-    </div>
-    <div class="form-group">
-      <label class="form-label">お問い合わせ内容</label>
-      <textarea class="form-textarea" placeholder="ご相談の内容をお書きください"></textarea>
-    </div>
-    <button class="form-submit">無 料 相 談 を 申 し 込 む</button>
-  </div>
-  <div class="contact-alt">
-    <span class="contact-alt-label">または</span>
-    <div class="contact-links">
-      <a href="tel:052-990-3563" class="contact-link">📞 052-990-3563</a>
-      <a href="#" class="contact-link">💬 LINE で相談</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <img src="./images/logo-round.webp" class="footer-logo-img" alt="イロドリ">
-    <p class="footer-tagline">Coloring Your LIFE</p>
-    <p class="footer-copy">© 2024 株式会社イロドリ All rights reserved.</p>
-  </div>
-  <div>
-    <p class="footer-info">〒458-0814 愛知県名古屋市緑区<br>鶴が沢1-411 Green Park Gallery内<br><br>TEL: 052-990-3563<br>FAX: 052-990-3564<br><br>設立: 2022年10月4日<br>愛知県知事免許（1）第23896号</p>
-  </div>
-  <nav class="footer-nav">
-    <a href="#message">代表メッセージ</a>
-    <a href="#services">サービス一覧</a>
-    <a href="#staff">スタッフ紹介</a>
-    <a href="#contact">お問い合わせ</a>
-    <a href="#">プライバシーポリシー</a>
-  </nav>
-  <div class="footer-divider"></div>
-</footer>
-
-<script>
-// ─── v3 Original Hero Animation ───────────────────
-const colorLayer=document.getElementById('colorLayer');
-const maskCanvas=document.getElementById('maskCanvas');
-const card=document.getElementById('card');
-const replayBtn=document.getElementById('replayBtn');
-const ctx=maskCanvas.getContext('2d');
-let W,H,animFrame,startTime;
-const seeds=Array.from({length:200},(_,i)=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);});
-function rnd(i){return seeds[i%seeds.length];}
-function resize(){const h=document.getElementById('hero');W=h.offsetWidth;H=h.offsetHeight;maskCanvas.width=W;maskCanvas.height=H;}
-function drawWatercolorMask(p){
-  ctx.clearRect(0,0,W,H);
-  const cx=W*.5,cy=H*.5,maxR=Math.sqrt(W*W+H*H)*.56,r=maxR*Math.pow(p,.72);
-  const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,r*.72);
-  cg.addColorStop(0,'rgba(0,0,0,1)');cg.addColorStop(.7,'rgba(0,0,0,1)');cg.addColorStop(1,'rgba(0,0,0,0)');
-  ctx.fillStyle=cg;ctx.beginPath();ctx.arc(cx,cy,r*.85,0,Math.PI*2);ctx.fill();
-  if(p<.02)return;
-  for(let i=0;i<90;i++){
-    const angle=(i/90)*Math.PI*2+rnd(i*3)*.6;
-    const dp=Math.max(0,(p-rnd(i)*.18)/(1-rnd(i)*.18));if(dp<=0)continue;
-    const dist=r*(.62+rnd(i*7+1)*.72)*Math.pow(dp,.6);
-    const bx=cx+Math.cos(angle)*dist,by=cy+Math.sin(angle)*dist;
-    const br=r*(.06+rnd(i*5+2)*.10)*Math.pow(dp,.5);
-    const g=ctx.createRadialGradient(bx,by,0,bx,by,br);
-    const a=.55+rnd(i*9)*.45;
-    g.addColorStop(0,`rgba(0,0,0,${a.toFixed(2)})`);
-    g.addColorStop(.55,`rgba(0,0,0,${(a*.6).toFixed(2)})`);
-    g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=g;ctx.beginPath();ctx.arc(bx,by,br,0,Math.PI*2);ctx.fill();
-  }
-  for(let i=0;i<40;i++){
-    const a2=rnd(i*11)*Math.PI*2;
-    const sp=Math.max(0,p-.15-rnd(i)*.3);if(sp<=0)continue;
-    const sx=cx+Math.cos(a2)*r*(.5+rnd(i*13+3)*.95);
-    const sy=cy+Math.sin(a2)*r*(.5+rnd(i*13+3)*.95);
-    const sr=r*(.018+rnd(i*17)*.028)*Math.min(1,sp*3);
-    const sg=ctx.createRadialGradient(sx,sy,0,sx,sy,sr);
-    sg.addColorStop(0,'rgba(0,0,0,.7)');sg.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=sg;ctx.beginPath();ctx.arc(sx,sy,sr,0,Math.PI*2);ctx.fill();
-  }
-}
-function applyMask(){
-  const url=maskCanvas.toDataURL('image/png');
-  colorLayer.style.webkitMaskImage=`url('${url}')`;
-  colorLayer.style.maskImage=`url('${url}')`;
-  colorLayer.style.webkitMaskSize=`${W}px ${H}px`;
-  colorLayer.style.maskSize=`${W}px ${H}px`;
-  colorLayer.style.webkitMaskRepeat='no-repeat';
-  colorLayer.style.maskRepeat='no-repeat';
-}
-function initMask(){ctx.clearRect(0,0,W,H);applyMask();}
-function animate(ts){
-  if(!startTime)startTime=ts;
-  const e=ts-startTime;
-  if(e<1000){animFrame=requestAnimationFrame(animate);return;}
-  const p=Math.min(1,(e-1000)/3000);
-  drawWatercolorMask(p);applyMask();
-  if(p<1){animFrame=requestAnimationFrame(animate);}
-  else{
-    setTimeout(()=>card.classList.add('visible'),200);
-    setTimeout(()=>replayBtn.classList.add('visible'),2400);
-  }
-}
-function startAnimation(){
-  card.classList.remove('visible');replayBtn.classList.remove('visible');
-  cancelAnimationFrame(animFrame);startTime=null;initMask();animFrame=requestAnimationFrame(animate);
-}
-resize();initMask();requestAnimationFrame(animate);
-window.addEventListener('resize',resize);
-
-// ─── Header scroll ─────────────────────────────────
-window.addEventListener('scroll',()=>{
-  document.getElementById('header').classList.toggle('scrolled',window.scrollY>40);
-});
-
-// ─── IntersectionObserver (message + all new sections) ───
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-},{threshold:0.12});
-document.querySelectorAll('#msgLeft,#msgRight,.fade-in,.fade-left,.fade-right').forEach(el=>io.observe(el));
-
-// voice bloom handled inline
-</script>
-
-<div class="notebooklm-source-uploader-highlight"></div><div class="notebooklm-source-uploader-toast"></div><div id="claude-agent-glow-border" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483646; opacity: 0; transition: opacity 0.3s ease-in-out; animation: 2s ease-in-out 0s infinite normal none running claude-pulse; box-shadow: rgba(217, 119, 87, 0.5) 0px 0px 10px inset, rgba(217, 119, 87, 0.3) 0px 0px 20px inset, rgba(217, 119, 87, 0.1) 0px 0px 30px inset;"></div></body></html>
+    <div class="instagram-header fade-in">
+        <span class="section-label">Instagram</span>
+            <h2 class="section-title">日々の活動をお届け</h2>
+                <p class="insta-sub">家づくりの現場・お客様の声・スタッフの日常をInstagramで発信しています。</p>
+                  </div>
+                    <div class="insta-embed-grid fade-in">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/iezukuri_table/p/DUnlOJSEyTW/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/iezukuri_table/p/DOzZt4nEwIu/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DAfsmmZv2iq/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                                  </div>
+                                    <a href="https://www.instagram.com/iezukuri_table/" target="_blank" rel="noopener" class="insta-follow-btn fade-in">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                                            <span>@iezukuri_table をフォローする</span>
+                                              </a>
+                                                <script async src="//www.instagram.com/embed.js"></script>
+                                                </section>
+                                                
+                                                <section class="contact-section" id="contact">
+                                                  <span class="contact-label">Free Consultation</span>
+                                                    <h2 class="contact-title">まず、話してみませんか。</h2>
+                                                      <p class="contact-sub">家のこと、土地のこと、お金のこと。<br>どんな小さな疑問でも、お気軽にどうぞ。</p>
+                                                        <form class="contact-form" action="https://formspree.io/f/mwvwndwa" method="POST">
+                                                            <div class="form-group">
+                                                                  <label class="form-label">お名前 <span class="form-required">*</span></label>
+                                                                        <input type="text" name="name" class="form-input" placeholder="山田 太郎" required>
+                                                                            </div>
+                                                                                <div class="form-group">
+                                                                                      <label class="form-label">メールアドレス <span class="form-required">*</span></label>
+                                                                                            <input type="email" name="email" class="form-input" placeholder="example@email.com" required>
+                                                                                                </div>
+                                                                                                    <div class="form-group">
+                                                                                                          <label class="form-label">電話番号 <span class="form-required">*</span></label>
+                                                                                                                <input type="tel" name="tel" class="form-input" placeholder="090-0000-0000" required>
+                                                                                                                    </div>
+                                                                                                                        <div class="form-group">
+                                                                                                                              <label class="form-label">お住まいの都道府県 <span class="form-required">*</span></label>
+                                                                                                                                    <select name="prefecture" class="form-input form-select" required>
+                                                                                                                                            <option value="">選択してください</option>
+                                                                                                                                                    <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option selected>愛知県</option><option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+                                                                                                                                                          </select>
+                                                                                                                                                              </div>
+                                                                                                                                                                  <div class="form-group">
+                                                                                                                                                                        <label class="form-label">ご相談内容（複数選択可）<span class="form-note">※詳しいご相談は下記フリーコメント欄へ</span></label>
+                                                                                                                                                                              <div class="check-grid">
+                                                                                                                                                                                      <label class="check-item"><input type="checkbox" name="topic[]" value="不動産を買いたい"><span class="check-box"></span>不動産を買いたい</label>
+                                                                                                                                                                                              <label class="check-item"><input type="checkbox" name="topic[]" value="不動産を売りたい"><span class="check-box"></span>不動産を売りたい</label>
+                                                                                                                                                                                                      <label class="check-item"><input type="checkbox" name="topic[]" value="不動産売買の資金計画が知りたい"><span class="check-box"></span>不動産売買の資金計画が知りたい</label>
+                                                                                                                                                                                                              <label class="check-item"><input type="checkbox" name="topic[]" value="各建築会社のメリット・デメリットを聞きたい"><span class="check-box"></span>各建築会社のメリット・デメリットを聞きたい</label>
+                                                                                                                                                                                                                      <label class="check-item"><input type="checkbox" name="topic[]" value="注文住宅の資金計画が知りたい"><span class="check-box"></span>注文住宅の資金計画が知りたい</label>
+                                                                                                                                                                                                                              <label class="check-item"><input type="checkbox" name="topic[]" value="不動産売買のセミナーが聞きたい"><span class="check-box"></span>不動産売買のセミナーが聞きたい</label>
+                                                                                                                                                                                                                                      <label class="check-item"><input type="checkbox" name="topic[]" value="家づくりのセミナーが聞きたい"><span class="check-box"></span>家づくりのセミナーが聞きたい</label>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                    <div class="form-group">
+                                                                                                                                                                                                                                                          <label class="form-label">その他（フリーコメント欄）</label>
+                                                                                                                                                                                                                                                                <textarea name="message" class="form-textarea" rows="5" placeholder="ご自由にお書きください"></textarea>
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                        <button type="submit" class="form-submit">無 料 相 談 を 申 し 込 む</button>
+                                                                                                                                                                                                                                                                          </form>
+                                                                                                                                                                                                                                                                            <div class="contact-alt">
+                                                                                                                                                                                                                                                                                <span class="contact-alt-label">または</span>
+                                                                                                                                                                                                                                                                                    <div class="contact-links">
+                                                                                                                                                                                                                                                                                          <a href="tel:052-990-3563" class="contact-link">📞 052-990-3563</a>
+                                                                                                                                                                                                                                                                                                <a href="https://lin.ee/irodori" target="_blank" rel="noopener" class="contact-link">💬 LINE で相談</a>
+                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                      </section>
+                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                      <footer>
+                                                                                                                                                                                                                                                                                                        <div class="footer-logo">
+                                                                                                                                                                                                                                                                                                            <img src="images/logo-white.webp" alt="イロドリ" class="footer-logo-img">
+                                                                                                                                                                                                                                                                                                                <p class="footer-tagline">Coloring Your LIFE</p>
+                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                    <div class="footer-info">
+                                                                                                                                                                                                                                                                                                                        〒458-0814 愛知県名古屋市緑区鶴が沢1-411<br>
+                                                                                                                                                                                                                                                                                                                            Green Park Gallery内<br>
+                                                                                                                                                                                                                                                                                                                                TEL: 052-990-3563　FAX: 052-990-3564<br>
+                                                                                                                                                                                                                                                                                                                                    設立: 2022年10月4日<br>
+                                                                                                                                                                                                                                                                                                                                        愛知県知事免許（1）第23896号
+                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                            <nav class="footer-nav">
+                                                                                                                                                                                                                                                                                                                                                <a href="#message">代表メッセージ</a>
+                                                                                                                                                                                                                                                                                                                                                    <a href="#services">サービス一覧</a>
+                                                                                                                                                                                                                                                                                                                                                        <a href="#staff">スタッフ紹介</a>
+                                                                                                                                                                                                                                                                                                                                                            <a href="#contact">お問い合わせ</a>
+                                                                                                                                                                                                                                                                                                                                                                <a href="#">プライバシーポリシー</a>
+                                                                                                                                                                                                                                                                                                                                                                  </nav>
+                                                                                                                                                                                                                                                                                                                                                                    <div class="footer-divider"></div>
+                                                                                                                                                                                                                                                                                                                                                                      <p class="footer-copy">© 2024 株式会社イロドリ All rights reserved.</p>
+                                                                                                                                                                                                                                                                                                                                                                      </footer>
+                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                      <style>
+                                                                                                                                                                                                                                                                                                                                                                        .instagram-section { padding: 72px 40px; background: var(--warm-bg); text-align: center; }
+                                                                                                                                                                                                                                                                                                                                                                          .insta-sub { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: var(--muted); letter-spacing: 0.06em; line-height: 1.9; margin-bottom: 40px; }
+                                                                                                                                                                                                                                                                                                                                                                            .insta-embed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 40px; align-items: start; }
+                                                                                                                                                                                                                                                                                                                                                                              .insta-follow-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; border: 1.5px solid var(--mocha); color: var(--mocha); font-family: 'Noto Serif JP', serif; font-size: 0.88rem; letter-spacing: 0.15em; text-decoration: none; transition: all 0.3s; }
+                                                                                                                                                                                                                                                                                                                                                                                .insta-follow-btn:hover { background: var(--mocha); color: #fff; }
+                                                                                                                                                                                                                                                                                                                                                                                  @media(max-width: 768px) { .insta-embed-grid { grid-template-columns: 1fr; } }
+                                                                                                                                                                                                                                                                                                                                                                                    .form-required { color: #e8a87c; font-size: 0.75rem; margin-left: 2px; }
+                                                                                                                                                                                                                                                                                                                                                                                      .form-note { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; margin-left: 8px; font-weight: 400; }
+                                                                                                                                                                                                                                                                                                                                                                                        .form-select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+                                                                                                                                                                                                                                                                                                                                                                                          .form-select option { background: #3d2010; color: #fff; }
+                                                                                                                                                                                                                                                                                                                                                                                            .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; text-align: left; margin-top: 12px; }
+                                                                                                                                                                                                                                                                                                                                                                                              @media(max-width: 600px) { .check-grid { grid-template-columns: 1fr; } }
+                                                                                                                                                                                                                                                                                                                                                                                                .check-item { display: flex; align-items: center; gap: 10px; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; font-size: 0.84rem; color: rgba(255,255,255,0.82); letter-spacing: 0.04em; user-select: none; }
+                                                                                                                                                                                                                                                                                                                                                                                                  .check-item input[type="checkbox"] { display: none; }
+                                                                                                                                                                                                                                                                                                                                                                                                    .check-box { width: 16px; height: 16px; border: 1.5px solid rgba(255,255,255,0.4); flex-shrink: 0; position: relative; transition: all 0.2s; }
+                                                                                                                                                                                                                                                                                                                                                                                                      .check-item input:checked ~ .check-box { background: #c49a5a; border-color: #c49a5a; }
+                                                                                                                                                                                                                                                                                                                                                                                                        .check-item input:checked ~ .check-box::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg); }
+                                                                                                                                                                                                                                                                                                                                                                                                        </style>
+                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                                                                                                                        </html>>
