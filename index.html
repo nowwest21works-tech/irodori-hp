@@ -105,7 +105,7 @@
     background-image: url('https://raw.githubusercontent.com/nowwest21works-tech/irodori-hp/main/images/hero-color.jpg');
     z-index: 2;
     clip-path: circle(0% at 50% 50%);
-    animation: colorBloom 3.5s ease-in-out 0.3s forwards;
+    animation: colorBloom 7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
   }
   #maskCanvas { display: none; }
 
@@ -206,7 +206,7 @@
   .msg-left {
     display: flex; flex-direction: column;
     align-items: center; gap: 14px;
-    opacity: 0; transform: translateY(24px);
+    opacity: 1; transform: none;
     transition: opacity 1s ease, transform 1s ease;
   }
   .msg-left.visible { opacity:1; transform:translateY(0); }
@@ -231,7 +231,7 @@
   }
 
   .msg-right {
-    opacity: 0; transform: translateY(24px);
+    opacity: 1; transform: none;
     transition: opacity 1s ease 0.15s, transform 1s ease 0.15s;
   }
   .msg-right.visible { opacity:1; transform:translateY(0); }
@@ -1134,10 +1134,10 @@ function hidePage(id) {
                   </div>
                     <div class="insta-embed-grid fade-in">
                         <div class="insta-cell">
-                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/iezukuri_table/p/DUnlOJSEyTW/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DUnlOJSEyTW/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
                         </div>
                         <div class="insta-cell">
-                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/iezukuri_table/p/DOzZt4nEwIu/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DOzZt4nEwIu/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
                         </div>
                         <div class="insta-cell">
                                 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DAfsmmZv2iq/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
