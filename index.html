@@ -99,12 +99,13 @@
   .img-mono {
     background-image: url('https://raw.githubusercontent.com/nowwest21works-tech/irodori-hp/main/images/hero-mono.jpg');
     opacity: 1;
-    z-index: 2;
-    animation: fadeOutMono 2s ease-out 0.6s forwards;
+    z-index: 1;
   }
   .img-color {
     background-image: url('https://raw.githubusercontent.com/nowwest21works-tech/irodori-hp/main/images/hero-color.jpg');
-    z-index: 1;
+    z-index: 2;
+    clip-path: circle(0% at 50% 50%);
+    animation: colorBloom 3s ease-out 0.5s forwards;
   }
   #maskCanvas { display: none; }
 
@@ -126,7 +127,7 @@
     border-radius: 16px;
     padding: clamp(20px,3vw,36px) clamp(28px,4.5vw,56px);
     max-width: min(400px, 78vw);
-    opacity: 0; transform: translateY(8px);
+    opacity: 1; transform: translateY(0);
     box-shadow: 0 8px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.22);
     transition: opacity 2s cubic-bezier(0.22,1,0.36,1), transform 2s cubic-bezier(0.22,1,0.36,1);
   }
@@ -265,9 +266,9 @@
   }
   .msg-cta:hover { background: var(--mocha); color: #fff; }
 
-  @keyframes fadeOutMono {
-    from { opacity:1; transform:scale(1); }
-    to   { opacity:0; transform:scale(1); }
+  @keyframes colorBloom {
+    0%   { clip-path: circle(0% at 50% 50%); }
+    100% { clip-path: circle(150% at 50% 50%); }
   }
 
   .replay-btn {
@@ -1245,5 +1246,20 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                                                                                                                         .check-item input:checked ~ .check-box::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg); }
                                                                                                                                                                                                                                                                                                                                                                                                         </style>
                                                                                                                                                                                                                                                                                                                                                                                                         
-                                                                                                                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                                                                                                                        
+<script>
+(function fixInstaIframes() {
+  function fix() {
+    document.querySelectorAll('.insta-embed-grid iframe').forEach(function(f) {
+      f.style.position = 'relative';
+      f.style.maxWidth = '100%';
+      f.style.width = '100%';
+    });
+  }
+  setTimeout(fix, 1000);
+  setTimeout(fix, 2500);
+  setTimeout(fix, 5000);
+})();
+</script>
+</body>
                                                                                                                                                                                                                                                                                                                                                                                                         </html>>
