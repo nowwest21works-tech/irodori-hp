@@ -431,7 +431,25 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
   footer{grid-template-columns:1fr;padding:48px 32px 24px}
 }
 
-</style>
+
+  /* ── Responsive two-column layout ── */
+  @media (max-width: 768px) {
+    .resp-two-col {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+    .msg-detail-grid {
+      padding: 40px 24px 56px !important;
+    }
+    .staff-detail-grid {
+      padding: 36px 24px 0 !important;
+    }
+    .resp-two-col > *:first-child {
+      order: -1;
+    }
+  }
+
+  </style>
 <style>
     .notebooklm-source-uploader-highlight {
       position: absolute;
@@ -558,7 +576,7 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
   </div>
 
   <!-- Content: image left, text right — same height via CSS grid -->
-  <div style="max-width:1000px;margin:0 auto;padding:64px 48px 88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+  <div class="resp-two-col msg-detail-grid" style="max-width:1000px;margin:0 auto;padding:64px 48px 88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
 
     <!-- Left: Portrait sticky -->
     <div style="position:sticky;top:80px;">
@@ -583,35 +601,15 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
       </div>
     </div>
   </div>
-</div>
-
-<script>
-function showPage(id) {
-  document.getElementById(id).style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  window.scrollTo(0,0);
-}
-function hidePage(id) {
-  document.getElementById(id).style.display = 'none';
-  document.body.style.overflow = '';
-}
-</script>
 
 
-
-
-<!-- ═══ 会社概要セクション ═══ -->
-<section id="company" style="padding: clamp(60px, 10vw, 120px) clamp(20px, 8vw, 100px); background: #faf9f7;">
-  <div style="max-width: 900px; margin: 0 auto;">
-
-    <!-- Section header -->
-    <div style="text-align: center; margin-bottom: clamp(40px, 6vw, 64px);">
-      <p style="font-family: 'Cormorant Garamond', 'Noto Serif JP', serif; font-size: clamp(0.65rem, 1.2vw, 0.75rem); letter-spacing: 0.3em; color: #b8967a; margin-bottom: 12px; text-transform: uppercase;">Company</p>
-      <h2 style="font-family: 'Shippori Mincho', 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.1em; color: #2c2c2c; margin: 0;">会社概要</h2>
-      <div style="width: 32px; height: 1px; background: #b8967a; margin: 20px auto 0;"></div>
+  <!-- 会社概要 inside message-page -->
+  <div style="max-width:1000px;margin:0 auto;padding:0 48px 72px;">
+    <div style="margin-bottom: clamp(32px,5vw,48px);">
+      <p style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(0.65rem,1.2vw,0.75rem);letter-spacing:0.3em;color:#b8967a;margin-bottom:10px;text-transform:uppercase;">Company</p>
+      <h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:400;letter-spacing:0.1em;color:#2c2c2c;margin:0 0 16px;">会社概要</h3>
+      <div style="width:28px;height:1px;background:#b8967a;"></div>
     </div>
-
-    <!-- Table -->
     <table style="width: 100%; border-collapse: collapse; font-family: 'Shippori Mincho', 'Noto Serif JP', serif;">
       <tbody>
         <tr style="border-bottom: 1px solid #e8e0d6;">
@@ -644,9 +642,24 @@ function hidePage(id) {
         </tr>
       </tbody>
     </table>
-
   </div>
-</section>
+
+</div>
+
+<script>
+function showPage(id) {
+  document.getElementById(id).style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  window.scrollTo(0,0);
+}
+function hidePage(id) {
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = '';
+}
+</script>
+
+
+
 
 <section class="services-section" id="services">
   <div class="services-header fade-in">
@@ -973,7 +986,7 @@ function hidePage(id) {
   </div>
 
   <!-- Hero: photo + name -->
-  <div style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
+  <div class="resp-two-col staff-detail-grid" style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
     <div>
       <img src="./images/staff-ito.webp" alt="伊藤 陽二" style="width:100%;display:block;border-radius:2px;">
     </div>
@@ -1059,7 +1072,7 @@ function hidePage(id) {
   </div>
 
   <!-- Hero: photo + name -->
-  <div style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
+  <div class="resp-two-col staff-detail-grid" style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
     <div>
       <img src="./images/staff-nagamatsu.webp" alt="永松 大嗣" style="width:100%;display:block;border-radius:2px;">
     </div>
@@ -1123,7 +1136,7 @@ function hidePage(id) {
   </div>
 
   <!-- Hero: photo + name -->
-  <div style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
+  <div class="resp-two-col staff-detail-grid" style="max-width:1000px;margin:0 auto;padding:56px 48px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:end;">
     <div>
       <img src="./images/staff-ishii.webp" alt="石井 秀直" style="width:100%;display:block;border-radius:2px;">
     </div>
