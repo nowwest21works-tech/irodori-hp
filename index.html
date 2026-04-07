@@ -432,20 +432,59 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
 }
 
 
-  /* ── Responsive two-column layout ── */
+  /* ── Responsive layout ── */
   @media (max-width: 768px) {
+    /* Main two-column grids → single column */
     .resp-two-col {
       grid-template-columns: 1fr !important;
-      gap: 28px !important;
+      gap: 24px !important;
     }
-    .msg-detail-grid {
-      padding: 40px 24px 56px !important;
-    }
-    .staff-detail-grid {
-      padding: 36px 24px 0 !important;
-    }
+    /* Image always on top on mobile */
     .resp-two-col > *:first-child {
       order: -1;
+    }
+    /* Message detail padding */
+    .msg-detail-grid {
+      padding: 32px 20px 48px !important;
+    }
+    /* Staff detail padding */
+    .staff-detail-grid {
+      padding: 28px 20px 0 !important;
+    }
+    /* Career/stats grid → single column */
+    .resp-career-grid {
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+    }
+    /* Body section wrapper */
+    .resp-body-wrap {
+      padding: 32px 20px 64px !important;
+    }
+    /* Company table wrapper */
+    .resp-company-wrap {
+      padding: 0 20px 48px !important;
+    }
+    /* Table font size on mobile */
+    .resp-company-wrap table th,
+    .resp-company-wrap table td {
+      font-size: 0.82rem !important;
+      padding: 12px 8px !important;
+    }
+    .resp-company-wrap table th {
+      width: 35% !important;
+      white-space: normal !important;
+    }
+    /* Staff image on mobile - limit height */
+    .staff-detail-grid img {
+      max-height: 60vw !important;
+      object-fit: cover !important;
+      object-position: top !important;
+    }
+    /* Message page image on mobile */
+    .msg-detail-grid img {
+      max-height: 65vw !important;
+      object-fit: cover !important;
+      object-position: top !important;
     }
   }
 
@@ -604,7 +643,7 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
 
 
   <!-- 会社概要 inside message-page -->
-  <div style="max-width:1000px;margin:0 auto;padding:0 48px 72px;">
+  <div class="resp-company-wrap" style="max-width:1000px;margin:0 auto;padding:0 48px 72px;">
     <div style="margin-bottom: clamp(32px,5vw,48px);">
       <p style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(0.65rem,1.2vw,0.75rem);letter-spacing:0.3em;color:#b8967a;margin-bottom:10px;text-transform:uppercase;">Company</p>
       <h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:400;letter-spacing:0.1em;color:#2c2c2c;margin:0 0 16px;">会社概要</h3>
@@ -1018,8 +1057,8 @@ function hidePage(id) {
   </div>
 
   <!-- Body: 4 sections -->
-  <div style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
+  <div class="resp-body-wrap" style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
+    <div class="resp-career-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
 
       <!-- 略歴 -->
       <div style="border-top:1px solid rgba(196,152,90,0.4);padding-top:24px;">
@@ -1091,8 +1130,8 @@ function hidePage(id) {
   </div>
 
   <!-- Body: 4 sections -->
-  <div style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
+  <div class="resp-body-wrap" style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
+    <div class="resp-career-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
 
       <!-- 略歴 -->
       <div style="border-top:1px solid rgba(196,152,90,0.4);padding-top:24px;">
@@ -1155,8 +1194,8 @@ function hidePage(id) {
   </div>
 
   <!-- Body: 4 sections -->
-  <div style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
+  <div class="resp-body-wrap" style="max-width:1000px;margin:0 auto;padding:52px 48px 96px;">
+    <div class="resp-career-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;">
 
       <!-- 略歴 -->
       <div style="border-top:1px solid rgba(196,152,90,0.4);padding-top:24px;">
