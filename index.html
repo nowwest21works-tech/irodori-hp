@@ -447,6 +447,11 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
     .msg-detail-grid {
       padding: 32px 20px 48px !important;
     }
+    /* 画像sticky解除（スマホでテキストが裏に流れるのを防止）*/
+    .msg-detail-grid > div[style*="sticky"],
+    .msg-detail-grid > div:first-child {
+      position: static !important;
+    }
     /* Staff detail padding */
     .staff-detail-grid {
       padding: 28px 20px 0 !important;
