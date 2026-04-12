@@ -317,13 +317,15 @@
 .insta-big-label{
   display:block;
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,6vw,5rem);
-  font-weight:300;
-  font-style:italic;
-  letter-spacing:0.08em;
+  font-size:clamp(0.72rem,1.3vw,0.82rem);
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
   color:var(--mocha);
   line-height:1;
   text-align:center;
+  margin-bottom:12px;
 }
 .voice-header .section-title{font-family:'Shippori Mincho','Noto Serif JP',serif;color:var(--charcoal)}
 
@@ -608,7 +610,7 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
     <h2 class="msg-heading">あなたの暮らしに、<br>イロドリを。</h2>
     <p class="msg-body">
       弊社は「あなたの暮らしにイロドリを」という理念を掲げ、２０２２年に創業致しました。<br>
-      弊社をパートナーにお選び頂いたお客様はもちろん、提携協力企業様・自社で働くメンバーまたその御家族様<br>皆様に豊かさを提供すべく地道に誠実に活動しております。
+      弊社をパートナーにお選び頂いたお客様はもちろん、提携協力企業様・自社で働くメンバーまたその御家族様 皆様に豊かさを提供すべく地道に誠実に活動しております。
     </p>
     <a href="#message-page" class="msg-cta" onclick="showPage('message-page');return false;">代表メッセージ・企業概要を見る　→</a>
   </div>
@@ -674,8 +676,8 @@ footer{background:linear-gradient(to bottom,#3d2310 0%,#4a2c14 6%,#4a2c14 100%);
           <td style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); font-size: clamp(0.85rem,1.5vw,0.95rem); color: #3a3530; letter-spacing: 0.05em; line-height: 1.8;">〒458-0814　愛知県名古屋市緑区鶴が沢1-411<br>Green Park Gallery</td>
         </tr>
         <tr style="border-bottom: 1px solid #e8e0d6;">
-          <th style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); text-align: left; font-size: clamp(0.78rem,1.4vw,0.88rem); font-weight: 500; letter-spacing: 0.15em; color: #b8967a; white-space: nowrap; width: 28%; vertical-align: top;">TEL</th>
-          <td style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); font-size: clamp(0.85rem,1.5vw,0.95rem); color: #3a3530; letter-spacing: 0.05em; line-height: 1.8;"><a href="tel:0529903563" style="color: inherit; text-decoration: none;">052-990-3563</a></td>
+          <th style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); text-align: left; font-size: clamp(0.78rem,1.4vw,0.88rem); font-weight: 500; letter-spacing: 0.15em; color: #b8967a; white-space: nowrap; width: 28%; vertical-align: top;">TEL/FAX</th>
+          <td style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); font-size: clamp(0.85rem,1.5vw,0.95rem); color: #3a3530; letter-spacing: 0.05em; line-height: 1.8;">052-990-3563／052-990-3564</td>
         </tr>
         <tr style="border-bottom: 1px solid #e8e0d6;">
           <th style="padding: clamp(16px,2.5vw,24px) clamp(12px,2vw,24px); text-align: left; font-size: clamp(0.78rem,1.4vw,0.88rem); font-weight: 500; letter-spacing: 0.15em; color: #b8967a; white-space: nowrap; width: 28%; vertical-align: top;">設立</th>
@@ -778,22 +780,37 @@ function hidePage(id) {
 
   <!-- クチコミ 1枚画像 + ブルームアニメーション -->
   <div id="voice-sheet-wrap" style="
-    max-width: 960px;
-    margin: 0 auto 48px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 48px;
     opacity: 0;
     transform: scale(0.92);
     transition: opacity 0.9s cubic-bezier(0.34, 1.1, 0.64, 1),
                 transform 0.9s cubic-bezier(0.34, 1.1, 0.64, 1);
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 40px rgba(157,115,85,0.12);
   ">
     <img
+      id="voice-sheet-img"
       src="images/voice-sheet.webp"
       alt="お客様からの口コミ一覧"
-      style="width:100%; height:auto; display:block;"
+      style="width:100%; height:auto; display:block; cursor:zoom-in;"
       loading="lazy"
+      onclick="document.getElementById('voice-lightbox').style.display='flex'"
     >
+  </div>
+
+  <!-- Lightbox -->
+  <div id="voice-lightbox" onclick="this.style.display='none'" style="
+    display:none; position:fixed; inset:0; z-index:9000;
+    background:rgba(0,0,0,0.88); align-items:center; justify-content:center;
+    cursor:zoom-out; padding:20px;
+  ">
+    <img src="images/voice-sheet.webp" alt="お客様からの口コミ（拡大）"
+      style="max-width:100%; max-height:90vh; object-fit:contain; border-radius:4px; box-shadow:0 8px 60px rgba(0,0,0,0.6);">
+    <button onclick="document.getElementById('voice-lightbox').style.display='none'" style="
+      position:absolute; top:16px; right:20px; background:none; border:none;
+      color:#fff; font-size:2rem; cursor:pointer; line-height:1; opacity:0.8;
+    ">✕</button>
   </div>
 
 <script>
@@ -1067,8 +1084,15 @@ function hidePage(id) {
         <span class="insta-big-label">Instagram</span>
                   </div>
                     <div class="insta-embed-grid fade-in">
-                        <div class="insta-cell">
-                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DAfsmmZv2iq/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
+                        <div class="insta-cell" style="display:flex;align-items:center;justify-content:center;">
+                          <a href="https://www.instagram.com/iezukuri_table/" target="_blank" rel="noopener"
+                            style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:300px;background:linear-gradient(135deg,#f5f0eb,#ede5dc);border:1px solid rgba(157,115,85,0.2);border-radius:4px;text-decoration:none;color:var(--mocha);transition:opacity 0.3s;padding:32px 20px;"
+                            onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9d7355" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#9d7355" stroke="none"/></svg>
+                            <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:8px;">@iezukuri_table</span>
+                            <span style="font-family:'Noto Serif JP',serif;font-size:0.78rem;letter-spacing:0.08em;color:#a08060;">家づくりテーブルのInstagramへ</span>
+                          </a>
                         </div>
                         <div class="insta-cell">
                             <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="min-width:280px;max-width:380px;width:100%;margin:0 auto;"></blockquote>
@@ -1137,8 +1161,6 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                       <footer>
   <div class="footer-logo">
-    <img src="images/logo-white.webp" alt="イロドリ" class="footer-logo-img">
-    <p class="footer-tagline">Coloring Your LIFE</p>
     <div class="footer-social">
       <a href="https://www.instagram.com/iezukuri_table/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
     </div>
@@ -1158,7 +1180,7 @@ function hidePage(id) {
     <a href="privacy.html">プライバシーポリシー・勧誘方針</a>
   </nav>
   <div class="footer-map-wrap">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.3667665389335!2d137.0038391!3d35.0934908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600363c8e27b1f4d%3A0x3d0ae79e6f52ad39!2z5qCq5byP5Lya56S-44Kk44Ot44OJ44Oq!5e1!3m2!1sja!2sjp!4v1775524603880!5m2!1sja!2sjp" width="100%" height="160" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.3667665389335!2d137.0038391!3d35.0934908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600363c8e27b1f4d%3A0x3d0ae79e6f52ad39!2z5qCq5byP5Lya56S-44Kk44Ot44OJ44Oq!5e0!3m2!1sja!2sjp!4v1775524603880!5m2!1sja!2sjp" width="100%" height="160" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
   <div class="footer-divider"></div>
   <p class="footer-copy">© 2024 株式会社イロドリ All rights reserved.</p>
