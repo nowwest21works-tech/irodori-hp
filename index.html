@@ -776,210 +776,39 @@ function hidePage(id) {
     
   </div>
 
-  <!-- クチコミグリッド（3×3） -->
-  <div id="irodori-reviews-grid" style="
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    max-width: 900px;
+  <!-- クチコミ 1枚画像 + ブルームアニメーション -->
+  <div id="voice-sheet-wrap" style="
+    max-width: 960px;
     margin: 0 auto 48px;
     opacity: 0;
-    transform: scale(0.88);
-    transition: opacity 0.8s cubic-bezier(0.34, 1.2, 0.64, 1),
-                transform 0.8s cubic-bezier(0.34, 1.2, 0.64, 1);
+    transform: scale(0.92);
+    transition: opacity 0.9s cubic-bezier(0.34, 1.1, 0.64, 1),
+                transform 0.9s cubic-bezier(0.34, 1.1, 0.64, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(157,115,85,0.12);
   ">
-
-    <!-- カード1 -->
-    <div class="rv-card" data-delay="0">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「家づくりのことだけでなく、保険や資金のことまで一緒に考えてもらえた。こんなに丁寧に向き合ってもらえるとは思っていなかった。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#7b9e87;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">K</div>
-        <span style="font-size:11px; color:#8a7f76">K.M 様 ／ 緑区</span>
-      </div>
-    </div>
-
-    <!-- カード2 -->
-    <div class="rv-card" data-delay="80">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「共働きで忙しい中、いつもLINEで素早く対応してくれました。こんなに親身になってくれる会社は初めてです。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#6b8fb0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">T</div>
-        <span style="font-size:11px; color:#8a7f76">T.S 様 ／ 天白区</span>
-      </div>
-    </div>
-
-    <!-- カード3 -->
-    <div class="rv-card" data-delay="160">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「元ハウスメーカー出身のプロが、業界の裏側まで教えてくれた。おかげで後悔のない選択ができました。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#b87070;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">A</div>
-        <span style="font-size:11px; color:#8a7f76">A.I 様 ／ 豊明市</span>
-      </div>
-    </div>
-
-    <!-- カード4 -->
-    <div class="rv-card" data-delay="240">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「最初は保険相談だけのつもりが、家づくりまで全部お願いすることになりました。それほど信頼できる方たちです。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#a07b5b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">Y</div>
-        <span style="font-size:11px; color:#8a7f76">Y.N 様 ／ 東海市</span>
-      </div>
-    </div>
-
-    <!-- カード5 -->
-    <div class="rv-card" data-delay="320">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「子育て中のことを本当によくわかってくれていて、終始安心できました。友人のように相談できます。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#8b7bb8;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">H</div>
-        <span style="font-size:11px; color:#8a7f76">H.K 様 ／ 瑞穂区</span>
-      </div>
-    </div>
-
-    <!-- カード6 -->
-    <div class="rv-card" data-delay="400">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「一つひとつ丁寧に説明してもらえて、複雑な内容もすんなり理解できました。イロドリさんに出会えて本当によかったです。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#70a090;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">R</div>
-        <span style="font-size:11px; color:#8a7f76">R.F 様 ／ 大府市</span>
-      </div>
-    </div>
-
-    <!-- カード7 -->
-    <div class="rv-card" data-delay="480">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「お金のことを正直に話しづらかったのに、ここではスッと話せました。空間も素敵で、子どもも退屈せず過ごせました。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#b89a50;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">M</div>
-        <span style="font-size:11px; color:#8a7f76">M.O 様 ／ 日進市</span>
-      </div>
-    </div>
-
-    <!-- カード8 -->
-    <div class="rv-card" data-delay="560">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「紹介してもらって来ましたが、想像以上でした。家づくりから保険まで窓口が一つで済むのはこんなにも楽なんだと実感しました。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#7090b8;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">S</div>
-        <span style="font-size:11px; color:#8a7f76">S.T 様 ／ 長久手市</span>
-      </div>
-    </div>
-
-    <!-- カード9 -->
-    <div class="rv-card" data-delay="640">
-      <div style="color:#d4a043; font-size:12px; letter-spacing:2px; margin-bottom:8px">★★★★★</div>
-      <p style="font-family:'Shippori Mincho','Noto Serif JP',serif; font-size:12.5px; line-height:1.8; color:#3d3530; margin:0 0 14px">
-        「引き渡し後もLINEで質問できる環境が続いているのが一番嬉しいです。本当の意味で伴走してもらえていると感じます。」
-      </p>
-      <div style="display:flex; align-items:center; gap:8px">
-        <div style="width:24px;height:24px;border-radius:50%;background:#8ab870;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:500">N</div>
-        <span style="font-size:11px; color:#8a7f76">N.H 様 ／ 知多市</span>
-      </div>
-    </div>
-
-  </div><!-- /grid -->
-
-  <!-- Googleマップリンクボタン -->
-  <div style="text-align:center">
-    <a href="https://maps.app.goo.gl/ZMsoFpJdDsmaa7pU6" target="_blank" rel="noopener" class="rv-map-btn">Googleマップで全ての声を見る →</a>
+    <img
+      src="images/voice-sheet.webp"
+      alt="お客様からの口コミ一覧"
+      style="width:100%; height:auto; display:block;"
+      loading="lazy"
+    >
   </div>
-
-</section>
-
-<style>
-/* ── rv-card ベーススタイル ── */
-.rv-card {
-  background: #fff;
-  border: 0.5px solid rgba(184,154,128,0.2);
-  border-radius: 12px;
-  padding: 20px 18px;
-  opacity: 0;
-  transform: translateY(16px) scale(0.96);
-  /* ブルーム用トランジション → ホバー用は下書き換え */
-  transition: opacity 0.45s ease, transform 0.45s ease,
-              box-shadow 0.35s ease, border-color 0.35s ease;
-  cursor: default;
-  position: relative;
-}
-
-/* ── ホバー：ふわっと浮き上がり ── */
-.rv-card:hover {
-  transform: translateY(-4px) scale(1.015) !important;
-  box-shadow: 0 12px 40px rgba(184,154,128,0.22);
-  border-color: rgba(184,154,128,0.55);
-}
-
-/* ── Googleマップボタン ── */
-.rv-map-btn {
-  display: inline-block;
-  border: 1px solid #b89a80;
-  color: #b89a80;
-  background: transparent;
-  border-radius: 30px;
-  padding: 12px 32px;
-  font-family: 'Shippori Mincho','Noto Serif JP',serif;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
-}
-.rv-map-btn:hover {
-  background: #b89a80;
-  color: #fff;
-}
-
-/* ── レスポンシブ ── */
-@media (max-width: 768px) {
-  #irodori-reviews-grid { grid-template-columns: repeat(2, 1fr) !important; }
-}
-@media (max-width: 480px) {
-  #irodori-reviews-grid { grid-template-columns: 1fr !important; }
-}
-</style>
 
 <script>
 (function() {
-  var grid = document.getElementById('irodori-reviews-grid');
-  if (!grid) return;
-
+  var wrap = document.getElementById('voice-sheet-wrap');
+  if (!wrap) return;
   function bloom() {
-    grid.style.opacity = '1';
-    grid.style.transform = 'scale(1)';
-    var cards = grid.querySelectorAll('.rv-card');
-    cards.forEach(function(card) {
-      var delay = parseInt(card.getAttribute('data-delay') || '0');
-      setTimeout(function() {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0) scale(1)';
-      }, delay + 150);
-    });
+    wrap.style.opacity = '1';
+    wrap.style.transform = 'scale(1)';
   }
-
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
       if (entries[0].isIntersecting) { bloom(); obs.disconnect(); }
-    }, { threshold: 0.15 });
-    obs.observe(grid);
+    }, { threshold: 0.12 });
+    obs.observe(wrap);
   } else {
     bloom();
   }
