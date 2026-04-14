@@ -1265,29 +1265,74 @@ function hidePage(id) {
 </div>
 
 <section class="instagram-section" id="instagram">
-    <div class="instagram-header fade-in">
-        <span class="insta-big-label">Instagram</span>
-                  </div>
-                    <div class="insta-embed-grid fade-in">
-                        <div class="insta-cell">
-                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DAfsmmZv2iq/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
-                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DAfsmmZv2iq/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
-                        </div>
-                        <div class="insta-cell">
-                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
-                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DB3POyzvOLo/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
-                        </div>
-                        <div class="insta-cell">
-                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWx_Ma_TuVY/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
-                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DWx_Ma_TuVY/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
-                        </div>
-                                  </div>
+  <div class="instagram-header fade-in">
+    <span class="insta-big-label">Instagram</span>
+  </div>
 
-                                                <script async src="//www.instagram.com/embed.js"></script>
-                                                
+  <!-- カスタムリールカード（iframe廃止・完全新タブ対応） -->
+  <div class="insta-card-grid fade-in">
 
-  <!-- Instagramアイコン+リンク -->
-  <div style="text-align:center; margin-top:32px;">
+    <a class="insta-card" href="https://www.instagram.com/reel/DAfsmmZv2iq/" target="_blank" rel="noopener noreferrer">
+      <div class="insta-card-img">
+        <div class="insta-reel-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+          <span>Reel</span>
+        </div>
+      </div>
+      <div class="insta-card-body">
+        <div class="insta-card-account">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          @iezukuri_table
+        </div>
+        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
+        <div class="insta-card-btn">Instagramで見る →</div>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/reel/DB3POyzvOLo/" target="_blank" rel="noopener noreferrer">
+      <div class="insta-card-img">
+        <div class="insta-reel-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+          <span>Reel</span>
+        </div>
+      </div>
+      <div class="insta-card-body">
+        <div class="insta-card-account">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          @iezukuri_table
+        </div>
+        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
+        <div class="insta-card-btn">Instagramで見る →</div>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/reel/DWx_Ma_TuVY/" target="_blank" rel="noopener noreferrer">
+      <div class="insta-card-img">
+        <div class="insta-reel-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+          <span>Reel</span>
+        </div>
+      </div>
+      <div class="insta-card-body">
+        <div class="insta-card-account">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          @iezukuri_table
+        </div>
+        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
+        <div class="insta-card-btn">Instagramで見る →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Instagramへのリンク -->
+  <div style="text-align:center; margin-top:40px;">
     <a href="https://www.instagram.com/iezukuri_table/" target="_blank" rel="noopener"
       style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:'Noto Serif JP',serif;font-size:0.85rem;letter-spacing:0.1em;padding:14px 32px;border:1px solid rgba(100,100,100,0.25);border-radius:2px;transition:all 0.3s;"
       onmouseover="this.style.background='rgba(0,0,0,0.04)'" onmouseout="this.style.background='none'"
@@ -1297,6 +1342,7 @@ function hidePage(id) {
     </a>
   </div>
 </section>
+
                                                 
                                                 <section class="contact-section" id="contact">
                                                   <span class="contact-label">Free Consultation</span>
@@ -1388,27 +1434,13 @@ function hidePage(id) {
   max-height: 500px;
   position: relative;
 }
-/* PC版: iframeのtarget="_top"ナビゲーションを防ぎ新タブで開く */
-.insta-cell-link {
-  display: none;
-}
-@media(min-width:768px){
-  .insta-cell-link {
-    display: block;
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    cursor: pointer;
-    background: transparent;
-  }
-}
+
 .insta-cell blockquote { min-width: 0 !important; max-width: 100% !important; margin: 0 auto !important; }
 @media (max-width: 768px) {
   .insta-embed-grid { grid-template-columns: 1fr !important; gap: 16px; padding: 0 16px; }
   .insta-cell { }
 }
-                                                                                                                                                                                                                                                                                                                                                                              .insta-follow-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; border: 1.5px solid var(--mocha); color: var(--mocha); font-family: 'Noto Serif JP', serif; font-size: 0.88rem; letter-spacing: 0.15em; text-decoration: none; transition: all 0.3s; }
-                                                                                                                                                                                                                                                                                                                                                                                .insta-follow-btn:hover { background: var(--mocha); color: #fff; }
+                                                                                                                                                                                                                                                                                                                                                                              
                                                                                                                                                                                                                                                                                                                                                                                   @media(max-width: 768px) { .insta-embed-grid { grid-template-columns: 1fr; } }
                                                                                                                                                                                                                                                                                                                                                                                     .form-required { color: #e8a87c; font-size: 0.75rem; margin-left: 2px; }
                                                                                                                                                                                                                                                                                                                                                                                       .form-note { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; margin-left: 8px; font-weight: 400; }
@@ -1421,7 +1453,82 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                                                                                                                     .check-box { width: 16px; height: 16px; border: 1.5px solid rgba(255,255,255,0.4); flex-shrink: 0; position: relative; transition: all 0.2s; }
                                                                                                                                                                                                                                                                                                                                                                                                       .check-item input:checked ~ .check-box { background: #c49a5a; border-color: #c49a5a; }
                                                                                                                                                                                                                                                                                                                                                                                                         .check-item input:checked ~ .check-box::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg); }
-                                                                                                                                                                                                                                                                                                                                                                                                        </style>
+                                                                                                                                                                                                                                                                                                                                                                                                        
+/* ===== Instagramカスタムカード ===== */
+.insta-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 0;
+}
+.insta-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  background: #fff;
+  border: 0.5px solid rgba(157,115,85,0.18);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+}
+.insta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(107,66,38,0.13);
+}
+.insta-card-img {
+  background: linear-gradient(135deg, #c9a882 0%, #9d7355 50%, #6b4226 100%);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.insta-reel-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.85);
+}
+.insta-reel-icon span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.insta-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.insta-card-account {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.insta-card-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.insta-card-btn {
+  margin-top: auto;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #9d7355;
+  font-family: 'Cormorant Garamond', serif;
+}
+@media(max-width: 767px) {
+  .insta-card-grid { grid-template-columns: 1fr; gap: 14px; }
+  .insta-card-img { height: 140px; }
+}
+</style>
                                                                                                                                                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                                         
 <script>
