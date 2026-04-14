@@ -777,99 +777,237 @@ function hidePage(id) {
     
   </div>
 
-  <!-- お客様の声 画像 -->
-  <div id="voice-img-wrap" onclick="openVoiceLightbox()" style="
-    cursor:zoom-in;
-    padding:0 clamp(16px,4vw,60px);
-    opacity:0;
-    transform:translateY(32px);
-    transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
-    position:relative;
-  ">
-    <img src="./images/okoe3.webp" alt="お客様の声 口コミ一覧"
-      style="width:100%;height:auto;display:block;border-radius:4px;background:#fff;
-             transition:transform 0.5s cubic-bezier(0.22,1,0.36,1);"
-      id="voice-img-main">
-    <span style="
-      position:absolute;bottom:16px;right:calc(clamp(16px,4vw,60px) + 12px);
-      background:rgba(157,115,85,0.88);color:#fff;
-      font-size:11px;letter-spacing:0.15em;padding:7px 14px;border-radius:2px;
-      opacity:0;transform:translateY(6px);
-      transition:opacity 0.3s,transform 0.3s;
-      pointer-events:none;
-    " id="voice-zoom-hint">クリックで拡大</span>
-  </div>
+  <!-- クチコミ カードグリッド 5×5 -->
+  <div id="voice-grid-outer" style="padding:0 clamp(12px,4vw,60px);">
 
-  <!-- ライトボックス -->
-  <div id="voice-lightbox" onclick="closeVoiceLightbox()" style="
-    position:fixed;inset:0;
-    background:rgba(20,14,8,0.93);
-    z-index:9999;
-    display:flex;align-items:flex-start;justify-content:center;
-    opacity:0;pointer-events:none;
-    transition:opacity 0.35s ease;
-    padding:60px 16px 16px;overflow-y:auto;
-  ">
-    <button onclick="event.stopPropagation();closeVoiceLightbox()" style="
-      position:fixed;top:14px;right:18px;
-      width:42px;height:42px;border-radius:50%;
-      background:rgba(157,115,85,0.9);border:none;cursor:pointer;
-      display:flex;align-items:center;justify-content:center;
-      transition:background 0.2s;z-index:10000;
-    " onmouseover="this.style.background='#6b4226'" onmouseout="this.style.background='rgba(157,115,85,0.9)'">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-    <div onclick="event.stopPropagation()" style="max-width:1200px;width:100%;border-radius:4px;overflow:hidden;
-      transform:scale(0.93);transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);" id="voice-lb-inner">
-      <img src="./images/okoe3.webp" alt="お客様の声 拡大" style="display:block;width:100%;height:auto;">
+    <!-- デスクトップ: 5列グリッド / スマホ: 行ごと横スクロール -->
+    <div id="voice-grid-wrap" style="
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:12px;
+      max-width:1400px;
+      margin:0 auto;
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+    ">
+
+      <div class="vc" data-row="0">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">知人からの紹介でご縁がつながりました。家を建てたいな…というぼんやりとした気持ちの私たちでしたが、安心・納得して家づくりを進めていけるように丁寧にサポートしていただいています。資金計画・ハウスメーカー選びや土地探しなど、私たちの需要に合った情報や豊富な知識を教えてくださります。一歩一歩、確実に前進し、いい家作りのスタートが切れたと思っています！</p>
+        <div class="vc-meta">1か月前</div>
+      </div>
+      <div class="vc" data-row="0">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">ご縁があって、現在 実家の相談をしております。不動産仲介という非常に胡散臭い私のイメージを伊藤さんは見事に払拭してくれました。実直、愚直、素直にご対応いただいており、また、横のパイプもしっかりお持ちで満足、納得のいくご相談、ご縁に感謝しております。</p>
+        <div class="vc-meta">2か月前</div>
+      </div>
+      <div class="vc" data-row="0">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">全く知識のない状態からのスタートでしたが、とても分かりやすく説明していただき、気軽に相談できる雰囲気を作ってくれて何も分からなかった私にも打ち合わせを楽しくしていただきました。友人に教えてもらったのですが、これから建てるのが本当に待ち遠しいです。</p>
+        <div class="vc-meta">2か月前</div>
+      </div>
+      <div class="vc" data-row="0">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">伊藤さんに家造りの相談にのって頂きました。相談前は何から手を着けたら良いか分からない状態でしたが丁寧に順序立てた説明と計画を立ててくださり大変助かりました。また私達夫婦の要望に合わせた各ハウスメーカーの選定や土地選びなど細かな相談にのって頂けて大変心強かったです。</p>
+        <div class="vc-meta">2か月前</div>
+      </div>
+      <div class="vc" data-row="0">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">住宅購入について、何も知識のないところからのサポートがあり本当にありがとうございます。きちんとした条件に合った物件を数件紹介してもらいつつ、分かりやすく教えていただきました。各業者さんとのコーディネートも見ていただいて、納得して物件を購入することができました。ありがとうございました。</p>
+        <div class="vc-meta">2か月前</div>
+      </div>
+      <div class="vc" data-row="1">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">友人の紹介で利用させていただきました。まず☆5じゃ足りません！笑 家づくりをするにあたって何の知識もない私たちに、1つ1つ丁寧に説明してくれて予算や希望に合ったHMの提案をしてくださり大変感謝しています！今後友人が家を建てる時は必ずイロドリさんを紹介しています！</p>
+        <div class="vc-meta">2か月前</div>
+      </div>
+      <div class="vc" data-row="1">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">本当に親身になってくださいました。最終の他社比較の際は、私たちだけでは決めきれず、伊藤さんがいてくれたおかげで納得したメーカーに建築のお願いすることができました。見積書は素人目線じゃ難し過ぎます。メーカー選びや家を建てること自体考えるのが嫌になった時期もありましたが、家づくりがとても楽しくなりました。ありがとうございました！</p>
+        <div class="vc-meta">3か月前</div>
+      </div>
+      <div class="vc" data-row="1">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">2、3年後を目処に家を建てたいな、なんとなくと思っていたところご縁がありました。家づくりの過程で自分たちに合った流れやアドバイス、自分に合ったメーカー選びの視点で親身にサポートしていただき、無事に決定をすることができました！本当に心強くて大大大感謝です！！</p>
+        <div class="vc-meta">3か月前</div>
+      </div>
+      <div class="vc" data-row="1">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">夫婦2人ともほぼ何も分からない状態からのスタートで、家に対する希望に合ったHMや土地の提案など、安心して家づくりを最初から最後まで任せることができました。結果的に自分たちの望むHMと出会うことができ、夫婦2人とも大大大満足です。これからもよろしくお願いします！</p>
+        <div class="vc-meta">4か月前</div>
+      </div>
+      <div class="vc" data-row="1">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">家づくりを全く分からない状況からサポートいただきました！メーカーすら決まっていない状態で、右も左も分からない私たち夫婦に手取り足取り説明してくださり、すごく頼りになりました。家づくりで何か相談事項があれば絶対に相談するべき！と思っています。</p>
+        <div class="vc-meta">5か月前</div>
+      </div>
+      <div class="vc" data-row="2">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">家を建てることを考える上で、本当に右も左も分からない状態で、家づくりテーブルさんに出会うことができ、流れやアドバイス、自分に合ったメーカー選びの視点で親身にサポートしていただき、無事決定をすることができました！本当に心強くて大大大感謝です！！</p>
+        <div class="vc-meta">6か月前</div>
+      </div>
+      <div class="vc" data-row="2">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">若くして建てる事がいろいろと不安なこともありましたが、家づくりを始める前に的確なアドバイスをしてもらいとても良かったです。資金計画から土地探し、ハウスメーカー選びに何が必要かを本当に丁寧に教えてもらいました。安心して家づくりを進めることができています。ありがとうございました。</p>
+        <div class="vc-meta">6か月前</div>
+      </div>
+      <div class="vc" data-row="2">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">お寺の横にある実家のことで工務店に相談したことで、予算のことや新築、リノベーションのメリットデメリットを詳しく説明してもらい、最終的としてリノベーションを選択しました。家族一人一人で価値観や希望が違うので難しい状態でしたが、とても客観的な視点で整理していただけたと思います。</p>
+        <div class="vc-meta">9か月前</div>
+      </div>
+      <div class="vc" data-row="2">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">石井さんに両親の実家不動産の売却のお手伝いをしていただきました！まめな進捗状況の連絡をいただいたり、わからないことや疑問に思ったことには親切丁寧に回答をいただけたので最後まで安心して任せられました。今後もお付き合いしていきたいですし、友人にもお勧めしていきたいです。</p>
+        <div class="vc-meta">9か月前</div>
+      </div>
+      <div class="vc" data-row="2">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">今回、平屋の家を建てたいと思いどこで相談したら良いものかと悩んでいたところ子供からイロドリさんを紹介してもらいました。イロドリさんはとても親切丁寧にお話を聞いて下さりとても頼りになり本当に良い出会いに感謝しております。本当に安心でき助かりました。</p>
+        <div class="vc-meta">10か月前</div>
+      </div>
+      <div class="vc" data-row="3">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">友人の紹介で今回利用させていただきました。まず☆5じゃ足りません！家づくりをするにあたって何の知識もない私たちに、1つ1つ丁寧に説明してくれて予算や希望に合ったHMの提案をしてくださり大変感謝しています！今後友人が家を建てる時は必ずイロドリさんを紹介しています！</p>
+        <div class="vc-meta">10か月前</div>
+      </div>
+      <div class="vc" data-row="3">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">自分の条件に合った土地の紹介やハウスメーカーの紹介など、こんなに多くの選択肢を提示してもらえるとは思っていませんでした。知識がないところを丁寧に教えていただき、また細かな疑問点も丁寧にお答えいただいて大変お世話になりました。またこれからですが家づくりが楽しみになりました。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="3">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">家づくりを何から始めたらいいか何もわからなかった自分たちに、とても親切にアドバイスや助言をいただきました。お陰様で望みどおりの注文住宅が完成しました。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="3">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">友人の紹介でイロドリさんを知りました。家づくりの知識がなかった私たちにも、丁寧でわかりやすく説明してくださり、とても助かりました。店長は温和で話しやすく、どんなことでも気軽に話せる安心感があります。安心して家づくりを進めることができたのは、イロドリさんのおかげです。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="3">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">知人からの紹介でした。土地探しからハウスメーカー選びまでサポートしていただきました。ハウスメーカーの担当者さんとも連携がスムーズで流れるように家作りのスタートが切れました。着工引渡しまでも滞りなく進めることができました！</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="4">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">元大手ハウスメーカー店長という視点からみた様々なアドバイスに助けられました。最初で最後の家づくりになるかもしれないため知識のある第三者目線でみていただけるシステムはとてもいいと思いました。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="4">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">ハウスメーカー決めで試行錯誤していく中、素人でも分かりやすくアドバイスをして頂いたり、何気ない相談にも親身になって話を聞いて下さった心強かったです。紹介して頂いた担当者様もいい人たちばかりでした。本当に感謝しています。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="4">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">土地探しやハウスメーカー選び、住宅ローン相談など多岐に渡り親身に相談を聞いていただきました。豊富な経験をもとに迅速にアドバイスをしていただけるのでとても安心感があり信頼できます。今後も引き続きよろしくお願いします。ありがとうございました。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="4">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">我が家の状況や希望を踏まえて、適切にアドバイスをしていただくことができました！本当にありがとうございました（^^）</p>
+        <div class="vc-meta">1年前</div>
+      </div>
+      <div class="vc" data-row="4">
+        <div class="vc-star">★★★★★</div>
+        <p class="vc-text">1人でわからない事も事前に教えてもらえると不安なことをスムーズに話し進める事ができました。本当にありがとうございました。</p>
+        <div class="vc-meta">1年前</div>
+      </div>
     </div>
   </div>
 
+<style>
+.vc{
+  background:#fff;
+  border:0.5px solid rgba(157,115,85,0.18);
+  border-radius:8px;
+  padding:16px 14px;
+  opacity:0;
+  transform:translateY(10px) scale(0.97);
+  transition:opacity 0.42s ease, transform 0.42s ease, box-shadow 0.3s ease;
+  display:flex;flex-direction:column;gap:10px;
+  min-width:0;
+}
+.vc:hover{
+  transform:translateY(-2px) scale(1.01)!important;
+  box-shadow:0 10px 28px rgba(157,115,85,0.15);
+}
+.vc-star{color:#d4a043;font-size:11px;letter-spacing:2px}
+.vc-text{
+  font-family:'Noto Serif JP',serif;
+  font-size:11.5px;line-height:1.85;
+  color:#3a3530;flex:1;
+}
+.vc-meta{font-size:10px;color:#a09080;letter-spacing:0.05em;margin-top:auto}
+
+/* スマホ: 行ごとに横スクロール */
+@media(max-width:767px){
+  #voice-grid-wrap{
+    display:block!important;
+  }
+  .voice-row{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:8px;
+    margin-bottom:10px;
+  }
+  .voice-row::-webkit-scrollbar{height:3px}
+  .voice-row::-webkit-scrollbar-thumb{background:rgba(157,115,85,0.35);border-radius:2px}
+  .vc{
+    min-width:72vw;
+    max-width:72vw;
+    flex-shrink:0;
+    scroll-snap-align:start;
+  }
+}
+@media(min-width:768px) and (max-width:1100px){
+  #voice-grid-wrap{grid-template-columns:repeat(3,1fr)!important}
+}
+</style>
+
 <script>
 (function(){
-  var wrap = document.getElementById('voice-img-wrap');
-  var hint = document.getElementById('voice-zoom-hint');
+  var wrap = document.getElementById('voice-grid-wrap');
   if(!wrap) return;
 
-  // ホバーでヒント表示
-  wrap.addEventListener('mouseenter', function(){
-    hint.style.opacity='1'; hint.style.transform='translateY(0)';
-  });
-  wrap.addEventListener('mouseleave', function(){
-    hint.style.opacity='0'; hint.style.transform='translateY(6px)';
-  });
-
-  // スクロール登場
-  if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(e){
-      if(e[0].isIntersecting){
-        wrap.style.opacity='1'; wrap.style.transform='translateY(0)';
-        obs.disconnect();
-      }
-    },{threshold:0.08});
-    obs.observe(wrap);
-  } else {
-    wrap.style.opacity='1'; wrap.style.transform='translateY(0)';
+  // スマホ: カードを行ごとにグルーピング
+  function buildMobileRows(){
+    if(window.innerWidth >= 768) return;
+    var cards = Array.from(wrap.querySelectorAll('.vc'));
+    if(wrap.querySelector('.voice-row')) return; // already done
+    // group by 5
+    wrap.innerHTML='';
+    for(var r=0;r<5;r++){
+      var row = document.createElement('div');
+      row.className='voice-row';
+      cards.slice(r*5,(r+1)*5).forEach(function(c){ row.appendChild(c); });
+      wrap.appendChild(row);
+    }
   }
-})();
 
-function openVoiceLightbox(){
-  var lb=document.getElementById('voice-lightbox');
-  var inner=document.getElementById('voice-lb-inner');
-  lb.style.opacity='1'; lb.style.pointerEvents='all';
-  setTimeout(function(){ inner.style.transform='scale(1)'; },10);
-  document.body.style.overflow='hidden';
-}
-function closeVoiceLightbox(){
-  var lb=document.getElementById('voice-lightbox');
-  var inner=document.getElementById('voice-lb-inner');
-  lb.style.opacity='0'; lb.style.pointerEvents='none';
-  inner.style.transform='scale(0.93)';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeVoiceLightbox(); });
+  function bloom(){
+    wrap.style.opacity='1'; wrap.style.transform='translateY(0)';
+    var cards = wrap.querySelectorAll('.vc');
+    cards.forEach(function(c,i){
+      setTimeout(function(){ c.style.opacity='1'; c.style.transform='translateY(0) scale(1)'; }, i*25+80);
+    });
+  }
+
+  buildMobileRows();
+  window.addEventListener('resize', function(){ location.reload(); }, {once:true});
+
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(e){ if(e[0].isIntersecting){bloom();obs.disconnect();} },{threshold:0.05});
+    obs.observe(wrap);
+  }else{ bloom(); }
+})();
 </script>
 
 <section class="staff-section" id="staff">
