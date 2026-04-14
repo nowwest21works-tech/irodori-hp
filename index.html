@@ -386,7 +386,7 @@
 .staff-link-hint{font-family:'Cormorant Garamond',serif;font-size:0.68rem;letter-spacing:0.2em;color:var(--beige);display:block}
 
 /* INSTAGRAM */
-.instagram-section{padding:56px 72px;background:#fff;text-align:center}
+.instagram-section{padding:56px 32px;background:#fff;text-align:center}
 .instagram-header{margin-bottom:32px}
 .instagram-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;max-width:1100px;margin:0 auto 28px}
 .insta-item{aspect-ratio:1;overflow:hidden;background:var(--warm-white);position:relative;cursor:pointer}
@@ -1371,7 +1371,7 @@ function hidePage(id) {
 </footer>
                                                                                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                                                                       <style>
-                                                                                                                                                                                                                                                                                                                                                                        .instagram-section { padding: 72px 40px; background: var(--warm-bg); text-align: center; }
+                                                                                                                                                                                                                                                                                                                                                                        .instagram-section { padding: 56px 24px; background: var(--warm-bg); text-align: center; }
                                                                                                                                                                                                                                                                                                                                                                           .insta-sub { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: var(--muted); letter-spacing: 0.06em; line-height: 1.9; margin-bottom: 40px; }
                                                                                                                                                                                                                                                                                                                                                                             .insta-embed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 40px; align-items: start; }
 .insta-embed-grid { align-items: start; }
@@ -1404,9 +1404,20 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                                                                                                                         
 /* ===== Behold Instagram ウィジェット ===== */
 .behold-wrap {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto 8px;
-  padding: 0 clamp(0px, 2vw, 20px);
+  padding: 0 clamp(8px, 3vw, 40px);
+}
+/* Beholdウィジェット内部を大きく表示 */
+behold-widget {
+  display: block;
+  width: 100%;
+}
+/* スマホ: 2列に */
+@media(max-width: 640px) {
+  behold-widget {
+    --behold-column-count: 2;
+  }
 }
 </style>
                                                                                                                                                                                                                                                                                                                                                                                                         
