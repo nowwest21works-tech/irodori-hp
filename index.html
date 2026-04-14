@@ -1270,13 +1270,16 @@ function hidePage(id) {
                   </div>
                     <div class="insta-embed-grid fade-in">
                         <div class="insta-cell">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DAfsmmZv2iq/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DAfsmmZv2iq/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DAfsmmZv2iq/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
                         </div>
                         <div class="insta-cell">
-                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DB3POyzvOLo/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
                         </div>
                         <div class="insta-cell">
-                                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWx_Ma_TuVY/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWx_Ma_TuVY/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                          <a class="insta-cell-link" href="https://www.instagram.com/reel/DWx_Ma_TuVY/" target="_blank" rel="noopener" aria-label="Instagramで見る"></a>
                         </div>
                                   </div>
 
@@ -1383,6 +1386,21 @@ function hidePage(id) {
   background: var(--warm-white);
   overflow: hidden;
   max-height: 500px;
+  position: relative;
+}
+/* PC版: iframeのtarget="_top"ナビゲーションを防ぎ新タブで開く */
+.insta-cell-link {
+  display: none;
+}
+@media(min-width:768px){
+  .insta-cell-link {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: transparent;
+  }
 }
 .insta-cell blockquote { min-width: 0 !important; max-width: 100% !important; margin: 0 auto !important; }
 @media (max-width: 768px) {
