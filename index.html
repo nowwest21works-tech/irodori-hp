@@ -1269,70 +1269,19 @@ function hidePage(id) {
     <span class="insta-big-label">Instagram</span>
   </div>
 
-  <!-- カスタムリールカード（iframe廃止・完全新タブ対応） -->
-  <div class="insta-card-grid fade-in">
-
-    <a class="insta-card" href="https://www.instagram.com/reel/DAfsmmZv2iq/" target="_blank" rel="noopener noreferrer">
-      <div class="insta-card-img">
-        <div class="insta-reel-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-          </svg>
-          <span>Reel</span>
-        </div>
-      </div>
-      <div class="insta-card-body">
-        <div class="insta-card-account">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-          @iezukuri_table
-        </div>
-        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
-        <div class="insta-card-btn">Instagramで見る →</div>
-      </div>
-    </a>
-
-    <a class="insta-card" href="https://www.instagram.com/reel/DB3POyzvOLo/" target="_blank" rel="noopener noreferrer">
-      <div class="insta-card-img">
-        <div class="insta-reel-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-          </svg>
-          <span>Reel</span>
-        </div>
-      </div>
-      <div class="insta-card-body">
-        <div class="insta-card-account">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-          @iezukuri_table
-        </div>
-        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
-        <div class="insta-card-btn">Instagramで見る →</div>
-      </div>
-    </a>
-
-    <a class="insta-card" href="https://www.instagram.com/reel/DWx_Ma_TuVY/" target="_blank" rel="noopener noreferrer">
-      <div class="insta-card-img">
-        <div class="insta-reel-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-          </svg>
-          <span>Reel</span>
-        </div>
-      </div>
-      <div class="insta-card-body">
-        <div class="insta-card-account">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-          @iezukuri_table
-        </div>
-        <p class="insta-card-label">家づくりテーブルのInstagramで見る</p>
-        <div class="insta-card-btn">Instagramで見る →</div>
-      </div>
-    </a>
-
+  <!-- Behold.so Instagram フィード -->
+  <div class="behold-wrap fade-in">
+    <behold-widget feed-id="tATdA26qYdm70aF4Xzr7"></behold-widget>
+    <script>
+      (() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
+    </script>
   </div>
 
   <!-- Instagramへのリンク -->
-  <div style="text-align:center; margin-top:40px;">
+  <div style="text-align:center; margin-top:32px;">
     <a href="https://www.instagram.com/iezukuri_table/" target="_blank" rel="noopener"
       style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:'Noto Serif JP',serif;font-size:0.85rem;letter-spacing:0.1em;padding:14px 32px;border:1px solid rgba(100,100,100,0.25);border-radius:2px;transition:all 0.3s;"
       onmouseover="this.style.background='rgba(0,0,0,0.04)'" onmouseout="this.style.background='none'"
@@ -1343,7 +1292,6 @@ function hidePage(id) {
   </div>
 </section>
 
-                                                
                                                 <section class="contact-section" id="contact">
                                                   <span class="contact-label">Free Consultation</span>
                                                     <h2 class="contact-title">まず、話してみませんか。</h2>
@@ -1454,79 +1402,11 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                                                                                                                       .check-item input:checked ~ .check-box { background: #c49a5a; border-color: #c49a5a; }
                                                                                                                                                                                                                                                                                                                                                                                                         .check-item input:checked ~ .check-box::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg); }
                                                                                                                                                                                                                                                                                                                                                                                                         
-/* ===== Instagramカスタムカード ===== */
-.insta-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* ===== Behold Instagram ウィジェット ===== */
+.behold-wrap {
   max-width: 1100px;
-  margin: 0 auto 0;
-}
-.insta-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  color: var(--ink);
-  background: #fff;
-  border: 0.5px solid rgba(157,115,85,0.18);
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
-}
-.insta-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(107,66,38,0.13);
-}
-.insta-card-img {
-  background: linear-gradient(135deg, #c9a882 0%, #9d7355 50%, #6b4226 100%);
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.insta-reel-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.85);
-}
-.insta-reel-icon span {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-.insta-card-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.insta-card-account {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-}
-.insta-card-label {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--ink);
-}
-.insta-card-btn {
-  margin-top: auto;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  color: #9d7355;
-  font-family: 'Cormorant Garamond', serif;
-}
-@media(max-width: 767px) {
-  .insta-card-grid { grid-template-columns: 1fr; gap: 14px; }
-  .insta-card-img { height: 140px; }
+  margin: 0 auto 8px;
+  padding: 0 clamp(0px, 2vw, 20px);
 }
 </style>
                                                                                                                                                                                                                                                                                                                                                                                                         
