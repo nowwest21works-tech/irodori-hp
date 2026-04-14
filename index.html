@@ -1270,13 +1270,13 @@ function hidePage(id) {
                   </div>
                     <div class="insta-embed-grid fade-in">
                         <div class="insta-cell">
-                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DAfsmmZv2iq/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DAfsmmZv2iq/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
                         </div>
                         <div class="insta-cell">
-                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DB3POyzvOLo/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
                         </div>
                         <div class="insta-cell">
-                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWx_Ma_TuVY/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
+                                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWx_Ma_TuVY/" data-instgrm-version="14" style="max-width:100%;width:100%;margin:0 auto;"></blockquote>
                         </div>
                                   </div>
 
@@ -1378,7 +1378,12 @@ function hidePage(id) {
                                                                                                                                                                                                                                                                                                                                                                           .insta-sub { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: var(--muted); letter-spacing: 0.06em; line-height: 1.9; margin-bottom: 40px; }
                                                                                                                                                                                                                                                                                                                                                                             .insta-embed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 40px; align-items: start; }
 .insta-embed-grid { align-items: start; }
-.insta-cell { border-radius: 4px; background: var(--warm-white); overflow: hidden; }
+.insta-cell {
+  border-radius: 4px;
+  background: var(--warm-white);
+  overflow: hidden;
+  max-height: 500px;
+}
 .insta-cell blockquote { min-width: 0 !important; max-width: 100% !important; margin: 0 auto !important; }
 @media (max-width: 768px) {
   .insta-embed-grid { grid-template-columns: 1fr !important; gap: 16px; padding: 0 16px; }
